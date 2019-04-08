@@ -1,0 +1,9 @@
+{
+  "data": [
+    {
+      "questions": "Is language an interpreted language",
+      "choices": ["true", "false" ],
+      "answer": "true"
+    }
+  ]
+}
