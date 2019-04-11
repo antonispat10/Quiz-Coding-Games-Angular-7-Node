@@ -7,7 +7,7 @@ const CategoryController = require("./controllers/category");
 
 const router = express.Router();
 
-router.post("/createLink", QuizController.createLink);
+router.post("/createQuiz", QuizController.createLink);
 
 router.get("/playQuiz", QuizController.playQuiz);
 

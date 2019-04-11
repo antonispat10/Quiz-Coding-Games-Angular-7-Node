@@ -1,6 +1,7 @@
 const Quiz = require("../models/quiz");
 const Question = require("../models/question");
 
+// create a unique link for the quiz
 exports.createLink = async (req, res, next) => {
     let alreadyPlayed;
     try {
@@ -22,7 +23,7 @@ exports.createLink = async (req, res, next) => {
             })
             .then(createdQuiz => {
                 res.status(201).json({
-                    message: "Quiz created successfully",
+                    message: "Link created successfully",
                     createdQuiz,
                     randomLink
                 })
@@ -30,13 +31,13 @@ exports.createLink = async (req, res, next) => {
             .catch(error => {
                 res.status(500).json({
                     error: error,
-                    message: "Creating a quiz failed!"
+                    message: "Creating a link failed!"
                 });
             });
 
     } else {
         res.status(500).json({
-            message: "Quiz already played!"
+            message: "Link already created!"
         });
     }
 };
@@ -50,20 +51,17 @@ exports.createLink = async (req, res, next) => {
 
 };
 
+// link for playing the quiz 
 exports.playQuiz = (req, res, next) => {
-    console.log(req.query)
     Quiz.findOne({ link: req.query.link })
         .populate('category')
         .then(quiz => {
-            if (quiz.result = -1) {
-                Question.find({ category: quiz.category })
-                    .then(questions => {
-                        res.status(200).json(questions);
-                    })
-            } else {
-                res.status(404).json({ message: "Quiz already played!" });
-            }
-
+            console.log(quiz.category._id)
+            Question.find({ categoryId: quiz.category._id })
+                .then(questions => {
+                    res.status(200).json(questions);
+                })
+          
             if (!quiz) {
                 res.status(404).json({ message: "Quiz not found!" });
             }

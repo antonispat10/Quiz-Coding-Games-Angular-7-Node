@@ -11,7 +11,7 @@
     *ngFor="let category of categories"
   >
     <mat-card class="children">
-      <button mat-button color="primary" [routerLink]="['/category', category.id]">{{ category.name }}</button>
+      <button mat-button color="primary" [routerLink]="['/createQuiz', category.id]">{{ category.name }}</button>
 
     </mat-card>
   </div>

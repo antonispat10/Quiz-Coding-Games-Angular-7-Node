@@ -2,66 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8ae66f5-4999-426f-a980-306c6da5a04a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/assets/.gitkeep" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/.editorconfig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/angular.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/e2e/protractor.conf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/e2e/src/app.e2e-spec.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/e2e/src/app.po.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/e2e/tsconfig.e2e.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/package-lock.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/app/app.component.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/app/app.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/app/app.component.spec.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/app/app.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/app/app.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/browserslist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/environments/environment.prod.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/environments/environment.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/interceptor.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/karma.conf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/main.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/models/Category.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/polyfills.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/styles.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/test.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/tsconfig.app.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/tsconfig.spec.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/tslint.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/tsconfig.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/tslint.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/node_modules/cors/CONTRIBUTING.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/node_modules/cors/HISTORY.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/node_modules/cors/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/node_modules/cors/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/node_modules/cors/lib/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/node_modules/cors/package.json" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/files/data.json" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/src/Quiz/CreateQuiz/CreateQuiz.component.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.component.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.component.css" afterPath="$PROJECT_DIR$/front/src/Quiz/CreateQuiz/CreateQuiz.component.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.ts" afterPath="$PROJECT_DIR$/front/src/Quiz/CreateQuiz/CreateQuiz.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/front/src/header/header.component.css" afterPath="$PROJECT_DIR$/front/src/Header/header.component.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/front/src/header/header.component.html" afterPath="$PROJECT_DIR$/front/src/Header/header.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/front/src/header/header.component.ts" afterPath="$PROJECT_DIR$/front/src/Header/header.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/front/src/home/home.component.css" afterPath="$PROJECT_DIR$/front/src/Home/home.component.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/front/src/home/home.component.html" afterPath="$PROJECT_DIR$/front/src/Home/home.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/front/src/home/home.component.ts" afterPath="$PROJECT_DIR$/front/src/Home/home.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/front/src/login/create-category.component.css" afterPath="$PROJECT_DIR$/front/src/Category/create-category.component.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/front/src/login/create-category.component.html" afterPath="$PROJECT_DIR$/front/src/Category/create-category.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/front/src/login/create-category.component.ts" afterPath="$PROJECT_DIR$/front/src/Category/create-category.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.component.html" afterPath="$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.ts" afterPath="$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/src/angular-material.module.ts" afterPath="$PROJECT_DIR$/front/src/angular-material.module.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/src/app-routing.module.ts" afterPath="$PROJECT_DIR$/front/src/app-routing.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/src/header/header.component.html" afterPath="$PROJECT_DIR$/front/src/header/header.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/src/header/header.component.ts" afterPath="$PROJECT_DIR$/front/src/header/header.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/src/home/home.component.css" afterPath="$PROJECT_DIR$/front/src/home/home.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/src/home/home.component.html" afterPath="$PROJECT_DIR$/front/src/home/home.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/src/home/home.component.ts" afterPath="$PROJECT_DIR$/front/src/home/home.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/src/login/create-category.component.html" afterPath="$PROJECT_DIR$/front/src/login/create-category.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/src/login/create-category.component.ts" afterPath="$PROJECT_DIR$/front/src/login/create-category.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/src/app/app.module.ts" afterPath="$PROJECT_DIR$/front/src/app/app.module.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/src/shared/shared.service.ts" afterPath="$PROJECT_DIR$/front/src/shared/shared.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/app.js" afterPath="$PROJECT_DIR$/server/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/category.js" afterPath="$PROJECT_DIR$/server/controllers/category.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/middleware/file.js" afterPath="$PROJECT_DIR$/server/middleware/file.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/package-lock.json" afterPath="$PROJECT_DIR$/server/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/package.json" afterPath="$PROJECT_DIR$/server/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes.js" afterPath="$PROJECT_DIR$/server/routes.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -73,27 +30,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="create-category.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/src/login/create-category.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#form#0;n#mat-card#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#form#0;n#mat-card#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#mat-card#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/src/home/home.component.ts">
+      <file leaf-file-name="shared.service.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/front/src/shared/shared.service.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="143">
-              <caret line="28" column="47" lean-forward="false" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="57" />
+              <caret line="49" column="14" lean-forward="false" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
               <folding>
-                <element signature="e#0#48#0" expanded="true" />
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,51 +52,77 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateQuiz.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.ts">
+      <file leaf-file-name="CreateQuiz.component.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/src/Quiz/CreateQuiz/CreateQuiz.component.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="78">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateQuiz.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.component.css">
+      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="182">
+              <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#58#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="CreateQuiz.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.component.html">
+        <entry file="file://$PROJECT_DIR$/front/src/Quiz/CreateQuiz/CreateQuiz.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="26">
+              <caret line="1" column="45" lean-forward="false" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app-routing.module.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/src/app-routing.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/src/Home/home.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="13" column="68" lean-forward="false" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateQuiz.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/src/Quiz/CreateQuiz/CreateQuiz.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#85#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-528">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quiz.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/controllers/quiz.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="650">
-              <caret line="61" column="22" lean-forward="false" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+            <state relative-caret-position="312">
+              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -169,23 +138,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create-category.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/src/login/create-category.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#59#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>xc</find>
       <find>c</find>
       <find>check</find>
       <find>check-</find>
@@ -214,6 +170,8 @@
       <find>isload</find>
       <find>cors</find>
       <find>lengt</find>
+      <find>clien</find>
+      <find>quiz</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -249,14 +207,11 @@
         <option value="$PROJECT_DIR$/front/src/interceptor.ts" />
         <option value="$PROJECT_DIR$/front/src/login/create-category.component.html" />
         <option value="$PROJECT_DIR$/front/src/models/Category.ts" />
-        <option value="$PROJECT_DIR$/front/src/app-routing.module.ts" />
         <option value="$PROJECT_DIR$/front/src/login/create-category.component.ts" />
         <option value="$PROJECT_DIR$/front/src/header/header.component.html" />
-        <option value="$PROJECT_DIR$/front/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/front/src/index.html" />
         <option value="$PROJECT_DIR$/front/src/home/home.component.css" />
         <option value="$PROJECT_DIR$/front/src/environments/environment.ts" />
-        <option value="$PROJECT_DIR$/front/src/shared/shared.service.ts" />
         <option value="$PROJECT_DIR$/front/src/home/home.component.ts" />
         <option value="$PROJECT_DIR$/front/src/home/home.component.html" />
         <option value="$PROJECT_DIR$/server/controllers/category.js" />
@@ -264,8 +219,15 @@
         <option value="$PROJECT_DIR$/front/src/CreateTest/Create-Test.component.css" />
         <option value="$PROJECT_DIR$/front/src/CreateTest/CreateTest.ts" />
         <option value="$PROJECT_DIR$/front/src/CreateTest/CreateTest.component.html" />
-        <option value="$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.component.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.ts" />
+        <option value="$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.component.html" />
+        <option value="$PROJECT_DIR$/front/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/front/src/Home/home.component.html" />
+        <option value="$PROJECT_DIR$/front/src/app-routing.module.ts" />
+        <option value="$PROJECT_DIR$/front/src/Quiz/CreateQuiz/CreateQuiz.component.html" />
+        <option value="$PROJECT_DIR$/front/src/Quiz/CreateQuiz/CreateQuiz.component.ts" />
+        <option value="$PROJECT_DIR$/front/src/shared/shared.service.ts" />
       </list>
     </option>
   </component>
@@ -332,6 +294,152 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quiz-angular-node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quiz-angular-node" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quiz-angular-node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quiz-angular-node" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quiz-angular-node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quiz-angular-node" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quiz-angular-node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quiz-angular-node" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Quiz" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CreateQuiz" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quiz-angular-node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quiz-angular-node" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quiz-angular-node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quiz-angular-node" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Home" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quiz-angular-node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quiz-angular-node" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -349,6 +457,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\node\Personal\quiz-angular-node\front\src" />
+      <recent name="C:\xampp\htdocs\node\Personal\quiz-angular-node\front\src\Quiz" />
       <recent name="C:\xampp\htdocs\node\Personal\quiz-angular-node" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -453,15 +563,16 @@
       <workItem from="1554639116299" duration="26292000" />
       <workItem from="1554727681427" duration="23306000" />
       <workItem from="1554884514044" duration="10806000" />
-      <workItem from="1554922802526" duration="17049000" />
+      <workItem from="1554922802526" duration="20139000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77453000" />
+    <option name="totallyTimeSpent" value="80543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1936" height="1038" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25026068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -472,7 +583,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2641292" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2641292" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -526,7 +637,7 @@
     <entry file="file://$PROJECT_DIR$/client/src/app/app.component.html" />
     <entry file="file://$PROJECT_DIR$/client/src/header/header.component.ts" />
     <entry file="file://$PROJECT_DIR$/client/src/header/header.component.html" />
-    <entry file="file://$PROJECT_DIR$/front/src/header/header.component.css">
+    <entry file="file://$PROJECT_DIR$/front/src/Header/header.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="7" column="24" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
@@ -575,6 +686,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <marker date="1554915997674" expanded="true" signature="403:416" ph="{...}" />
+            <marker date="1554915997674" expanded="true" signature="468:481" ph="{...}" />
+            <marker date="1554915997674" expanded="true" signature="757:764" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -607,7 +723,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/login/create-category.component.css">
+    <entry file="file://$PROJECT_DIR$/front/src/Category/create-category.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
@@ -620,16 +736,6 @@
         <state relative-caret-position="78">
           <caret line="3" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="40" lean-forward="false" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -654,16 +760,6 @@
         <state relative-caret-position="52">
           <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#58#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -693,7 +789,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/home/home.component.css">
+    <entry file="file://$PROJECT_DIR$/front/src/Home/home.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
@@ -701,7 +797,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/header/header.component.ts">
+    <entry file="file://$PROJECT_DIR$/front/src/Header/header.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
@@ -709,28 +805,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/header/header.component.html">
+    <entry file="file://$PROJECT_DIR$/front/src/Header/header.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/shared/shared.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/home/home.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="20" column="78" lean-forward="false" selection-start-line="20" selection-start-column="78" selection-end-line="20" selection-end-column="78" />
           <folding />
         </state>
       </provider>
@@ -751,7 +829,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/home/home.component.ts">
+    <entry file="file://$PROJECT_DIR$/front/src/Home/home.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="28" column="47" lean-forward="false" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="57" />
@@ -761,15 +839,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/login/create-category.component.html">
+    <entry file="file://$PROJECT_DIR$/front/src/Category/create-category.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
@@ -781,7 +851,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/login/create-category.component.ts">
+    <entry file="file://$PROJECT_DIR$/front/src/Category/create-category.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
@@ -807,7 +877,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.ts">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/Quiz/CreateQuiz/CreateQuiz.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
@@ -815,27 +901,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.component.css">
+    <entry file="file://$PROJECT_DIR$/front/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="182">
+          <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/Home/home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="13" column="68" lean-forward="false" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/CreateQuiz/CreateQuiz.component.html">
+    <entry file="file://$PROJECT_DIR$/front/src/app-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="234">
+          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/Quiz/CreateQuiz/CreateQuiz.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="45" lean-forward="false" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/front/src/Quiz/CreateQuiz/CreateQuiz.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-528">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="434">
+          <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/shared/shared.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="49" column="14" lean-forward="false" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

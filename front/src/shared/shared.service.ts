@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import {Category} from "../models/Category";
-import {Observable} from "rxjs/index";
+import {Observable, Subject} from "rxjs/index";
 import {environment} from "../environments/environment";
 import {map} from "rxjs/internal/operators";
+import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 
 const BACKEND_URL = environment.apiUrl;
 
 @Injectable({ providedIn: "root" })
 export class SharedService {
-    constructor(private http: HttpClient) {}
+  generatedLink = new Subject<string>();
+
+  constructor(private http: HttpClient) {}
 
   createCategory(data: Category) {
       const formData = new FormData();
@@ -26,11 +29,11 @@ export class SharedService {
         })
   }
 
-  getCategories(currentPage: number, categoriesPerPage: number): Observable<Category[]> {
+  getCategories(currentPage: number, categoriesPerPage: number): Observable<{categories: Category[], count: number}> {
       const queryParams = `?pagesize=${categoriesPerPage}&page=${currentPage}`;
 
       return this.http
-          .get<any>(BACKEND_URL + '/categories' +queryParams)
+          .get<any>(BACKEND_URL + 'categories' +queryParams)
           .pipe(
               map(values => {
                   return {
@@ -47,6 +50,8 @@ export class SharedService {
           );
   }
 
-
+  createQuiz(data, category) {
+    return this.http.post(`${BACKEND_URL}createQuiz`, {...data, category})
+}
 
 }

@@ -25,8 +25,8 @@ export class HomeComponent implements OnInit {
     this.sharedService.getCategories(this.currentPage, this.categoriesPerPage)
       .subscribe(values => {
         console.log(values)
-        this.count = values.count as number;
-        this.categories = values.categories as Category[];
+        this.count = values.count;
+        this.categories = values.categories;
       })
   }
 

@@ -11,33 +11,33 @@ exports.createCategory = (req, res, next) => {
         filePath: '../files/' + req.file.filename,
     })
     .then(createdCategory => {
+        console.log(createdCategory)
+
         const data = require("../files/" + req.file.filename);
         data.data.forEach(value => {
-            console.log(value)
-            Question
-                .create({
-                    name: value.questions,
-                    choices: value.choices,
-                    answer: value.answer,
-                    category: createdCategory._id
-                })
-                .then(createdQuestion => {
-                    res.status(201).json({
-                        message: "Category created successfully",
-                        category: {
-                            ...createdCategory,
-                            id: createdCategory._id
-                        }
-                    });
-                })
+        Question
+            .create({
+                name: value.questions,
+                choices: value.choices,
+                answer: value.answer,
+                categoryId: createdCategory._id
             })
-            .catch(error => {
-                res.status(500).json({
-                    error: error,
-                    message: "Creating a category failed!"
+            .then(createdQuestion => {
+                res.status(201).json({
+                    message: "Category created successfully",
+                    questions: {
+                        createdQuestion
+                    }
                 });
-            });
+            })
+        })
     })
+    .catch(error => {
+        res.status(500).json({
+            error: error,
+            message: "Creating a category failed!"
+        });
+    });
 };
 
 exports.categories = (req, res, next) => {
