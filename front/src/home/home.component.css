@@ -15,6 +15,10 @@ ul {
 
 }
 
+.children {
+  margin: 10px;
+}
+
 .spacer {
   flex: 1 0 auto;
 }

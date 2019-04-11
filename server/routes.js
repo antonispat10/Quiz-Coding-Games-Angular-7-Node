@@ -13,6 +13,10 @@ router.get("/playQuiz", QuizController.playQuiz);
 
 router.post("/category", extractFile, CategoryController.createCategory);
 
+router.get("/category/:id", CategoryController.getCategory);
+
+router.get("/categories", CategoryController.categories);
+
 // router.get("/category", CategoryController.getQuestionsByCategory);
 
 module.exports = router;

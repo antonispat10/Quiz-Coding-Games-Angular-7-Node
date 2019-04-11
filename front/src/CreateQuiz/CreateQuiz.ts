@@ -2,41 +2,17 @@ import {Component, OnInit, OnDestroy, ViewChild, AfterViewInit} from "@angular/c
 import { NgForm } from "@angular/forms";
 import { Subscription } from "rxjs";
 
-import { AuthService } from "../auth.service";
+import {SharedService} from "../shared/shared.service";
 
 @Component({
-  templateUrl: "./CreateTest.component.html",
-  styleUrls: ["./CreateTest.component.css"]
+  templateUrl: "./CreateQuiz.component.html",
+  styleUrls: ["./CreateQuiz.component.css"]
 })
 export class CreateTestComponent implements OnInit, OnDestroy, AfterViewInit {
-  isLoading = false;
-  private authStatusSub: Subscription;
-  @ViewChild('loginForm') form;
-  formattedMessage = false;
-  oldVal = {};
-  constructor(public authService: AuthService) {}
+  @ViewChild('createTestForm') form;
+  constructor(public sharedService: SharedService) {}
 
   ngOnInit() {
-console.log(this.formattedMessage)
-    this.authStatusSub = this.authService.getAuthStatusListener().subscribe(
-      authStatus => {
-        this.isLoading = false;
-      }
-    );
-  }
-
-  ngAfterViewInit() {
-    this.form.valueChanges.subscribe((val, index) => {
-      let x = null;
-
-      if (x) {
-        console.log('old', this.oldVal, 'new', Object.entries(val))
-
-        this.oldVal = Object.entries(val);
-      this.formattedMessage = true;
-      }
-      console.log(this.formattedMessage, Object.entries(val))
-    });
   }
 
 
@@ -46,8 +22,7 @@ console.log(this.formattedMessage)
       return;
     }
     console.log(form.value)
-    console.log(this.formattedMessage)
-    this.sharedService.login(form.value.email, form.value.password);
+    this.sharedService.createTest(form.value);
 
   }
 

@@ -8,7 +8,7 @@ import {
   MatProgressSpinnerModule,
   MatPaginatorModule,
   MatDialogModule,
-  MatGridListModule,z
+  MatGridListModule,
 } from "@angular/material";
 
 @NgModule({

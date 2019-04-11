@@ -1,59 +1,42 @@
-import {Component, OnInit, OnDestroy, ViewChild, AfterViewInit} from "@angular/core";
-import { NgForm } from "@angular/forms";
+import {Component, OnInit, ViewChild} from "@angular/core";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import { Subscription } from "rxjs";
 
-import { AuthService } from "../auth.service";
+import { SharedService } from "../shared/shared.service";
 
 @Component({
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"]
+  templateUrl: "./create-category.component.html",
+  styleUrls: ["./create-category.component.css"]
 })
-export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
-  isLoading = false;
+export class CreateCategory implements OnInit {
   private authStatusSub: Subscription;
-  @ViewChild('loginForm') form;
+  @ViewChild('createCategoryForm') form;
   formattedMessage = false;
   oldVal = {};
-  constructor(public authService: AuthService) {}
+  constructor(public sharedService: SharedService) {}
 
   ngOnInit() {
-console.log(this.formattedMessage)
-    this.authStatusSub = this.authService.getAuthStatusListener().subscribe(
-      authStatus => {
-        this.isLoading = false;
-      }
-    );
-  }
-
-  ngAfterViewInit() {
-    this.form.valueChanges.subscribe((val, index) => {
-      let x = null;
-
-      if (x) {
-        console.log('old', this.oldVal, 'new', Object.entries(val))
-
-        this.oldVal = Object.entries(val);
-      this.formattedMessage = true;
-      }
-      console.log(this.formattedMessage, Object.entries(val))
+    this.form = new FormGroup({
+      name: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(3)]
+      }),
+      fileName: new FormControl(null, {
+        validators: [Validators.required],
+      })
     });
   }
 
-
-
-  onLogin(form: NgForm) {
-    if (form.invalid) {
-      return;
-    }
-    console.log(form.value)
-    this.isLoading = true;
-    this.formattedMessage = false;
-    console.log(this.formattedMessage)
-    this.authService.login(form.value.email, form.value.password);
-
+  onFilePicked(event: Event) {
+    const file = (event.target as HTMLInputElement).files[0];
+    this.form.patchValue({ fileName: file });
+    this.form.get("fileName").updateValueAndValidity();
+    console.log(this.form.get('fileName'))
   }
 
-  ngOnDestroy() {
-    this.authStatusSub.unsubscribe();
+  onCreateCategory() {
+
+
+    this.sharedService.createCategory(this.form.value);
   }
+
 }
