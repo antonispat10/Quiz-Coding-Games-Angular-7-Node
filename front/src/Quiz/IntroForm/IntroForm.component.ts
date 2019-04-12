@@ -17,7 +17,7 @@ export class CreateQuizComponent implements OnInit {
   @ViewChild('createTestForm') form;
   category;
   link;
-  FRONTEND_URL = 'localhost:4200/';
+  BACKEND_URL = environment.apiUrl;
 
   constructor(public sharedService: SharedService, private route: ActivatedRoute) {}
 
@@ -37,12 +37,9 @@ export class CreateQuizComponent implements OnInit {
 
 
   onCreateQuiz(form: NgForm) {
-    if (form.invalid) {
-      return;
-    }
     this.sharedService.createQuiz(form.value, this.category)
       .subscribe((data: any) => {
-        this.sharedService.generatedLink.next(`${this.FRONTEND_URL}playQuiz?link=${data.randomLink}`);
+        this.sharedService.generatedLink.next(`${this.BACKEND_URL}playQuiz?link=${data.randomLink}`);
       });
 
   }

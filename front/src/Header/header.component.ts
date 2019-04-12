@@ -4,8 +4,8 @@ import { SharedService } from "../shared/shared.service"
 
 @Component({
   selector: "app-header",
-  templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.css"]
+  templateUrl: "./Header.component.html",
+  styleUrls: ["./Header.component.css"]
 })
 export class HeaderComponent {
 

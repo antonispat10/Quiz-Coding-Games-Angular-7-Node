@@ -1,11 +1,11 @@
 <mat-card>
   <form (submit)="onCreateQuiz(createQuizForm)" #createQuizForm="ngForm" >
     <mat-form-field>
-      <input matInput name="name" [(ngModel)]='name' type="text" #nameInput="ngModel" placeholder="Name" required>
+      <input matInput name="name" ngModel type="text" placeholder="Name" #nameInput="ngModel" required>
       <mat-error *ngIf="nameInput.invalid">Please enter a valid name.</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input matInput name="surname"  [(ngModel)]='surname' type="text" #surnameInput="ngModel" placeholder="Surname" required>
+      <input matInput name="surname" ngModel type="text" placeholder="Surname" #surnameInput="ngModel" required>
       <mat-error *ngIf="surnameInput.invalid">Please enter a valid surname.</mat-error>
     </mat-form-field>
     <mat-form-field>
@@ -14,5 +14,5 @@
     </mat-form-field>
     <button mat-raised-button color="accent" type="submit">Create Link</button>
   </form>
-  <div *ngIf="link">Link generated. The link for the candidate {{ name }} {{ surname }} is {{ link }}</div>
+  <div *ngIf="link">Link generated. Your link is {{ link }}</div>
 </mat-card>

@@ -1,0 +1,22 @@
+<mat-card *ngIf="checkLink">
+  <mat-card-title>
+    <p>Welcome to the {{ quizName }} Quiz {{ questions[0].name }}</p>
+    <p>The quiz is available only for 1 time, so don't close your browser</p>
+    
+  </mat-card-title>
+  <form (submit)="onIntroQuiz(introQuizForm)" #introQuizForm="ngForm" >
+    <button mat-raised-button color="accent" type="submit">Press Here to Start</button>
+  </form>
+  <div *ngFor="let question of questions; let i = index">
+    <mat-card>
+        <form (submit)="onSubmitQuiz(submitQuizForm)" #submitQuizForm="ngForm" >
+            <p>{{ question.name }}</p>
+            <mat-radio-group style="width:100%" name="choice" *ngFor="let choice of question.choices" aria-label="Select an option">
+                <mat-radio-button style="width:100%" value="1">{{ choice }}</mat-radio-button>
+            </mat-radio-group>
+        
+            <button mat-raised-button color="accent" type="submit">Next</button>
+          </form>
+    </mat-card>
+  </div>
+</mat-card>

@@ -6,8 +6,8 @@ import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.css"]
+  templateUrl: "./Home.component.html",
+  styleUrls: ["./Home.component.css"]
 })
 export class HomeComponent implements OnInit {
   categories: Category[];

@@ -5,8 +5,8 @@ import { Subscription } from "rxjs";
 import { SharedService } from "../shared/shared.service";
 
 @Component({
-  templateUrl: "./create-category.component.html",
-  styleUrls: ["./create-category.component.css"]
+  templateUrl: "./CreateCategory.component.html",
+  styleUrls: ["./CreateCategory.component.css"]
 })
 export class CreateCategory implements OnInit {
   private authStatusSub: Subscription;
@@ -34,8 +34,6 @@ export class CreateCategory implements OnInit {
   }
 
   onCreateCategory() {
-
-
     this.sharedService.createCategory(this.form.value);
   }
 

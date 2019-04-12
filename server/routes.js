@@ -11,6 +11,10 @@ router.post("/createQuiz", QuizController.createLink);
 
 router.get("/playQuiz", QuizController.playQuiz);
 
+router.get("/resultsPerCandidate/:email", QuizController.resultsPerCandidate);
+
+router.post("/introQuiz", QuizController.introQuiz);
+
 router.post("/category", extractFile, CategoryController.createCategory);
 
 router.get("/category/:id", CategoryController.getCategory);

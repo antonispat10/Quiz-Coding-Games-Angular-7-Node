@@ -52,6 +52,37 @@ export class SharedService {
 
   createQuiz(data, category) {
     return this.http.post(`${BACKEND_URL}createQuiz`, {...data, category})
-}
+  }
+
+  introQuiz(url: string) {
+    const queryParams = `?link=${url}`;
+
+    return this.http.post(`${BACKEND_URL}introQuiz${queryParams}`)
+    .subscribe(v => {
+        console.log(v)
+    });
+  }
+
+  getQuestions(url: string) {
+    const queryParams = `?link=${url}`;
+
+    return this.http
+    .get<any>(BACKEND_URL + 'playQuiz' +queryParams)
+    .pipe(
+        map(values => {
+            return {
+                questions: values.questions.map(questions => {
+                    return {
+                        id: questions._id,
+                        name: questions.name,
+                        choices: questions.choices,
+                        answers: questions.filePath
+                    };
+                }),
+                quizName: values.quizName
+            };
+        })
+    );
+  }
 
 }
