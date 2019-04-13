@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: "createQuiz/:categoryId", component: CreateQuizComponent },
   { path: "playQuiz", component: PlayQuizComponent },
   { path: "searchResults", component: SearchResultsComponent },
+  { path: "auth", loadChildren: "./auth/auth.module#AuthModule"},
 
 ];
 

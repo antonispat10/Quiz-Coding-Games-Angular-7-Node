@@ -5,7 +5,6 @@ import { ParamMap } from "@angular/router";
 
 import {SharedService} from "../../shared/shared.service";
 import { ActivatedRoute } from '@angular/router';
-import { environment } from 'src/environments/environment';
 
 @Component({
   templateUrl: "./CreateQuiz.component.html",
@@ -13,11 +12,11 @@ import { environment } from 'src/environments/environment';
 })
 
 
-export class CreateQuizComponent implements OnInit {
-  @ViewChild('createTestForm') form;
+export class CreateQuizComponent implements OnInit, OnDestroy {
   category;
   link;
   FRONTEND_URL = 'localhost:4200/';
+  linkSub: Subscription;
 
   constructor(public sharedService: SharedService, private route: ActivatedRoute) {}
 
@@ -27,14 +26,12 @@ export class CreateQuizComponent implements OnInit {
       this.category = params.get('categoryId');
     });
 
-    this.sharedService.generatedLink
+    this.linkSub = this.sharedService.generatedLink
       .subscribe(link => {
         this.link = link;
       })
 
   }
-
-
 
   onCreateQuiz(form: NgForm) {
     if (form.invalid) {
@@ -44,7 +41,10 @@ export class CreateQuizComponent implements OnInit {
       .subscribe((data: any) => {
         this.sharedService.generatedLink.next(`${this.FRONTEND_URL}playQuiz?link=${data.randomLink}`);
       });
+  }
 
+  ngOnDestroy() {
+    this.linkSub.unsubscribe();
   }
 
 }

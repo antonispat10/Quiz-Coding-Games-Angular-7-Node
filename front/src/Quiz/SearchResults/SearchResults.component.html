@@ -23,8 +23,8 @@ class="results"  *ngIf="ifResult"
   >
       <div class="st">
           <span>Test <b> {{ result.category.name }} </b></span>
-          <div *ngIf="played" else #notPlayedYet>Score: <b>{{ result.result }} </b></div>
-          <ng-template #notPlayedYet>Not played yet.</ng-template>
+          <div *ngIf="result.result !== -1">Score: <b>{{ result.result }} </b></div>
+          <div *ngIf="result.result == -1">Not played yet this test</div>
       </div>
   </div>
 </mat-accordion>

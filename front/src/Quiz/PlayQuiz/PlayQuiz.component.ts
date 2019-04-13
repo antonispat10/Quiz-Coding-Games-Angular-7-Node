@@ -1,14 +1,15 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, OnDestroy} from "@angular/core";
 import { SharedService } from "../../shared/shared.service"
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: "app-play-quiz",
   templateUrl: "./playQuiz.component.html",
   styleUrls: ["./playQuiz.component.css"]
 })
-export class PlayQuizComponent implements OnInit {
+export class PlayQuizComponent implements OnInit, OnDestroy {
   url: string;
   quizName: string;
   questions: any = [];
@@ -21,6 +22,7 @@ export class PlayQuizComponent implements OnInit {
   load: number = 0;
   index: number;
   intro: boolean = true;
+  subIntroQuiz: Subscription;
   constructor(private sharedService: SharedService, private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -33,7 +35,7 @@ export class PlayQuizComponent implements OnInit {
 
   
   onIntroQuiz() {
-    this.sharedService.introQuiz(this.url)
+    this.subIntroQuiz = this.sharedService.introQuiz(this.url)
       .subscribe(v => {
         this.intro = false;
         this.startedPlaying = true;
@@ -78,7 +80,9 @@ export class PlayQuizComponent implements OnInit {
       })
   }
 
-
+  ngOnDestroy() {
+    this.subIntroQuiz.unsubscribe();
+  }
 
 
 }
