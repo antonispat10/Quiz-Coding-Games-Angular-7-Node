@@ -2,42 +2,40 @@ const Category = require("../models/category");
 const Question = require("../models/question");
 
 
-exports.createCategory = (req, res, next) => {
+exports.createCategory = async (req, res, next) => {
   const url = req.get("host");
-    console.log(req.file.filename)
-  const category = Category
+  try {
+    const category = await Category
     .create({
         name: req.body.name,
+        logo: req.body.logo,
         filePath: '../files/' + req.file.filename,
     })
-    .then(createdCategory => {
-        console.log(createdCategory)
+    console.log(category)
 
-        const data = require("../files/" + req.file.filename);
-        data.data.forEach(value => {
+    const data = require("../files/" + req.file.filename);
+    const quiz = await data.data.forEach((value, index) => {
         Question
-            .create({
-                name: value.questions,
-                choices: value.choices,
-                answer: value.answer,
-                categoryId: createdCategory._id
-            })
-            .then(createdQuestion => {
-                res.status(201).json({
-                    message: "Category created successfully",
-                    questions: {
-                        createdQuestion
-                    }
-                });
-            })
-        })
-    })
-    .catch(error => {
-        res.status(500).json({
-            error: error,
-            message: "Creating a category failed!"
+           .create({
+               name: value.questions,
+               choices: value.choices,
+               answer: value.answer,
+               categoryId: category._id
+           })
+           .then( v => { console.log(v)})
+       });
+        res.status(201).json({
+            message: "Category created successfully",
         });
+  }
+  catch (error) {
+    res.status(500).json({
+        error: error,
+        message: "Creating a category failed!"
     });
+  }
+ 
+        
 };
 
 exports.categories = (req, res, next) => {

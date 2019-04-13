@@ -5,7 +5,7 @@ const quizSchema = mongoose.Schema({
   surname: { type: String, required: true },
   email: { type: String, required: true },
   link: { type: String, required: true },
-  result: { type: String, required: false },
+  result: { type: Number, required: false },
   category: { type: mongoose.Schema.Types.ObjectId, ref: "Category", required: true }
 });
 

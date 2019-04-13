@@ -1,24 +1,39 @@
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-ul {
+mat-radio-group {
   display: flex;
-  justify-content: center;
-
+  width: 100%;
 }
 
-.children {
-  margin: 10px;
+.secondCard {
+  width: 50%;
+  margin: 0 auto;
 }
 
-.spacer {
-  flex: 1 0 auto;
+.secondCard {
+  background-color: #FFEB3B;
+}
+
+mat-radio-group {
+  width: 100%;
+  font-size: 16px;
+  font-family: Arial,sans-serif;
+  font-weight: 600;
+}
+
+.question {
+  font-size: 18px;
+  font-family: Arial,sans-serif;
+  font-weight: 600;
+}
+
+.head {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+mat-grid-list {
+  background-color: #283593;
+  color:white;
+  font-size: 80px;
+  font-weight: 600;
 }

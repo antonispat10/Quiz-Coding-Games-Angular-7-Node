@@ -1,4 +1,5 @@
 <mat-card>
+  <p class="center">Please insert the details of the candidate</p>
   <form (submit)="onCreateQuiz(createQuizForm)" #createQuizForm="ngForm" >
     <mat-form-field>
       <input matInput name="name" [(ngModel)]='name' type="text" #nameInput="ngModel" placeholder="Name" required>
@@ -12,7 +13,7 @@
       <input matInput name="email" ngModel type="text" placeholder="Email" #emailInput="ngModel" required email>
       <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
     </mat-form-field>
-    <button mat-raised-button color="accent" type="submit">Create Link</button>
+    <button mat-raised-button color="accent" type="submit">Create Link for the candidate</button>
   </form>
   <div *ngIf="link">Link generated. The link for the candidate {{ name }} {{ surname }} is {{ link }}</div>
 </mat-card>

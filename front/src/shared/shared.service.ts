@@ -5,6 +5,8 @@ import {Observable, Subject} from "rxjs/index";
 import {environment} from "../environments/environment";
 import {map} from "rxjs/internal/operators";
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
+import { Quiz } from 'src/models/Quiz';
+import { Router } from '@angular/router';
 
 const BACKEND_URL = environment.apiUrl;
 
@@ -12,17 +14,18 @@ const BACKEND_URL = environment.apiUrl;
 export class SharedService {
   generatedLink = new Subject<string>();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   createCategory(data: Category) {
       const formData = new FormData();
       formData.append("name", data.name);
+      formData.append("logo", data.logo);
       formData.append("fileName", data.fileName);
       console.log(formData)
     return this.http
         .post(`${BACKEND_URL}/category`, formData)
         .subscribe(data => {
-          console.log(data)
+          this.router.navigate(["/"]);
         },
         error => {
           console.log(error)
@@ -41,6 +44,7 @@ export class SharedService {
                           return {
                               id: category._id,
                               name: category.name,
+                              logo: category.logo,
                               filePath: category.filePath
                           };
                       }),
@@ -57,10 +61,7 @@ export class SharedService {
   introQuiz(url: string) {
     const queryParams = `?link=${url}`;
 
-    return this.http.post(`${BACKEND_URL}introQuiz${queryParams}`)
-    .subscribe(v => {
-        console.log(v)
-    });
+    return this.http.post(`${BACKEND_URL}introQuiz${queryParams}`, queryParams);
   }
 
   getQuestions(url: string) {
@@ -76,13 +77,18 @@ export class SharedService {
                         id: questions._id,
                         name: questions.name,
                         choices: questions.choices,
-                        answers: questions.filePath
+                        answer: questions.answer
                     };
                 }),
                 quizName: values.quizName
             };
         })
     );
+  }
+
+  findResults(email: string) {
+    console.log(email)
+    return this.http.post<{ message: string; quiz: Quiz[] }>(`${BACKEND_URL}searchResults`, {email})
   }
 
 }

@@ -2,23 +2,27 @@ import {Component, OnInit, ViewChild} from "@angular/core";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import { Subscription } from "rxjs";
 
-import { SharedService } from "../shared/shared.service";
+import { SharedService } from "../../shared/shared.service";
+import { Router } from "@angular/router";
 
 @Component({
   templateUrl: "./CreateCategory.component.html",
   styleUrls: ["./CreateCategory.component.css"]
 })
-export class CreateCategory implements OnInit {
+export class CreateCategoryComponent implements OnInit {
   private authStatusSub: Subscription;
   @ViewChild('createCategoryForm') form;
   formattedMessage = false;
   oldVal = {};
-  constructor(public sharedService: SharedService) {}
+  constructor(public sharedService: SharedService, private router: Router) {}
 
   ngOnInit() {
     this.form = new FormGroup({
       name: new FormControl(null, {
         validators: [Validators.required, Validators.minLength(3)]
+      }),
+      logo: new FormControl(null, {
+        validators: [Validators.required]
       }),
       fileName: new FormControl(null, {
         validators: [Validators.required],

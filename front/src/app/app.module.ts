@@ -6,26 +6,27 @@ import {FormsModule, ReactiveFormsModule}   from '@angular/forms';
 
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "../Header/Header.component";
-import { CreateCategory } from "../Category/CreateCategory.component";
+import { CreateCategoryComponent } from "../Category/CreateCategory//CreateCategory.component";
 
 import { AppRoutingModule } from "../app-routing.module";
 import { AngularMaterialModule } from "../angular-material.module";
-import {Interceptor} from "../interceptor";
 import {ErrorInterceptor} from "../error-interceptor";
-import {HomeComponent} from "../Home/home.component";
+import {CategoriesListComponent} from "../Category/CategoriesList/CategoriesList.component";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {CreateQuizComponent} from "../Quiz/CreateQuiz/CreateQuiz.component";
 import { PlayQuizComponent } from 'src/Quiz/PlayQuiz/PlayQuiz.component';
-import { ErrorComponent } from 'src/error/error.component';
+import { ErrorComponent } from 'src/Error/Error.component';
+import { SearchResultsComponent } from 'src/Quiz/SearchResults/SearchResults.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CreateCategory,
-    HomeComponent,
+    CreateCategoryComponent,
+    CategoriesListComponent,
     CreateQuizComponent,
     PlayQuizComponent,
+    SearchResultsComponent,
     ErrorComponent
   ],
   imports: [

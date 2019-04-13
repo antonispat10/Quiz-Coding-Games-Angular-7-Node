@@ -1,0 +1,17 @@
+mat-form-field {
+  width: 100%;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+input[type="file"] {
+  visibility: hidden;
+}
+
+.center {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+}

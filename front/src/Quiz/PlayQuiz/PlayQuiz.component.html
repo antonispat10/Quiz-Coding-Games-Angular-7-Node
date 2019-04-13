@@ -1,22 +1,31 @@
 <mat-card *ngIf="checkLink">
-  <mat-card-title>
-    <p>Welcome to the {{ quizName }} Quiz {{ questions[0].name }}</p>
+  <mat-card-title *ngIf="intro">
+    <p>Welcome to the {{ quizName }} Quiz</p>
     <p>The quiz is available only for 1 time, so don't close your browser</p>
-    
-  </mat-card-title>
   <form (submit)="onIntroQuiz(introQuizForm)" #introQuizForm="ngForm" >
     <button mat-raised-button color="accent" type="submit">Press Here to Start</button>
   </form>
-  <div *ngFor="let question of questions; let i = index">
-    <mat-card>
-        <form (submit)="onSubmitQuiz(submitQuizForm)" #submitQuizForm="ngForm" >
-            <p>{{ question.name }}</p>
-            <mat-radio-group style="width:100%" name="choice" *ngFor="let choice of question.choices" aria-label="Select an option">
-                <mat-radio-button style="width:100%" value="1">{{ choice }}</mat-radio-button>
+</mat-card-title>
+  <div *ngIf="startedPlaying">
+    <div *ngFor="let question of questions; let i = index" >
+      <mat-card *ngIf="load == i" class="secondCard">
+          <p class="head" *ngIf="i == 0">{{ quizName }} Quiz</p>
+          <form *ngIf="load == i" (submit)="onSubmitQuiz(submitQuizForm)" #submitQuizForm="ngForm" >
+
+            <p class="question">{{ question.name }}</p>
+            <mat-radio-group name="answer"  [(ngModel)]="answer" type="text" #answerInput="ngModel" *ngFor="let choice of question.choices">
+                <mat-radio-button  [value]="choice">{{ choice }}</mat-radio-button>
             </mat-radio-group>
         
-            <button mat-raised-button color="accent" type="submit">Next</button>
+            <button mat-raised-button color="accent" (click)="findIndex(i)" type="submit">Next</button>
           </form>
-    </mat-card>
+      </mat-card></div>
   </div>
+
+  <div *ngIf="showResults">
+    <mat-grid-list cols="1" color="primary" rowHeight="3:1">
+      <mat-grid-tile> Your Score is {{ score }}%</mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  
 </mat-card>

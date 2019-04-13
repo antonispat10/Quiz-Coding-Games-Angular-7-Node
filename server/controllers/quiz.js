@@ -5,7 +5,7 @@ const Question = require("../models/question");
 exports.createLink = async (req, res, next) => {
     let alreadyPlayed;
     try {
-         alreadyPlayed =  await checkIfAlreadyPlayed(req.body.email, req.body.name);
+         alreadyPlayed =  await checkIfAlreadyPlayed(req.body.email, req.body.category);
     }
     catch (err) {
         console.log(err)
@@ -42,21 +42,16 @@ exports.createLink = async (req, res, next) => {
     }
 };
 
-  async function checkIfAlreadyPlayed(email, category) {
-      const played = await Quiz
-          .findOne({
-              email
-          });
-    return played;
-
+function checkIfAlreadyPlayed(email, category) {
+    return Quiz.findOne({email, category});
 };
 
-// link for playing the quiz 
+// play the quiz 
 exports.playQuiz = (req, res, next) => {
     Quiz.findOne({ link: req.query.link })
         .populate('category')
         .then(quiz => {
-            console.log(quiz.category._id)
+            console.log(quiz.category.name)
             const quizName = quiz.name;
             Question.find({ categoryId: quiz.category._id })
                 .then(questions => {
@@ -76,10 +71,12 @@ exports.playQuiz = (req, res, next) => {
 
 // link for setting result to 0
 exports.introQuiz = (req, res, next) => {
-    Quiz.updateOne({ link: req.query.link }, {result:0})
+    Quiz.updateOne({ link: req.query.link }, {result:1})
         .then(quiz => {
+            console.log(quiz)
             if (quiz.nModified > 0) {
                 res.status(200).json({
+                    quiz,
                     message: "Successfully set results to 0"
                 });
             } 
@@ -97,11 +94,18 @@ exports.introQuiz = (req, res, next) => {
 // view the results for each candidate by inserting his/her email
 exports.resultsPerCandidate = (req, res, next) => {
     Quiz.find({ email: req.body.email })
+        .populate('category')
         .then(quiz => {
+            if (quiz[0]) {
                 res.status(200).json({
                     quiz,
                     message: "Successfully found the results of the tests for the candidate"
                 });
+            } else {
+                res.status(401).json({
+                    message: "Results not found for this email"
+                });
+            }
         })
         .catch(error => {
             res.status(500).json({

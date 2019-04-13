@@ -1,0 +1,23 @@
+mat-form-field {
+  width: 100%;
+}
+
+form {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.mat-grid-tile .mat-figure {
+  flex-direction: column !important;
+}
+
+p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.st {
+  background-color: #FAFAFA;
+  border-radius: 20px;
+  font-size: 24px;
+  margin: 10px;
+  padding: 60px;
+}

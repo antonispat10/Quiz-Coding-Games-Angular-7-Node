@@ -11,7 +11,7 @@ app.use(cors());
 
 mongoose
   .connect(
-    "mongodb+srv://admin:admin@cluster0-jmntn.mongodb.net/quiz?retryWrites=true", { useNewUrlParser: true }
+    "mongodb+srv://admin:admin@cluster0-jmntn.mongodb.net/quizaa?retryWrites=true", { useNewUrlParser: true }
   )
   .then(() => {
     console.log("Connected to database!");
@@ -22,8 +22,6 @@ mongoose
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/images", express.static(path.join(__dirname, "images")));
-app.use("/", express.static(path.join(__dirname, "angular")));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");

@@ -1,0 +1,31 @@
+<mat-card  *ngIf="!ifResult">
+    <form (submit)="onFindResults(findResultsForm)" #findResultsForm="ngForm" >
+      <mat-form-field>
+        <input matInput name="email" ngModel type="text" placeholder="Please enter the candidate's email" #emailInput="ngModel" required email>
+        <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="accent" type="submit">Find Results</button>
+    </form>
+</mat-card>
+<mat-accordion 
+fxLayout="row wrap"
+fxLayout.lt-sm="column"
+fxLayoutGap="5%"
+fxLayoutAlign="flex-start"
+multi="true" 
+class="results"  *ngIf="ifResult" 
+>
+  <div 
+  fxFlex="0 1 calc(33% - 5%)"
+  fxFlex.lt-md="0 1 calc(50% - 5%)"
+  fxFlex.lt-sm="100%"
+  class="grid-tile" *ngFor="let result of results; let i = index;"
+  >
+      <div class="st">
+          <span>Test <b> {{ result.category.name }} </b></span>
+          <div *ngIf="played" else #notPlayedYet>Score: <b>{{ result.result }} </b></div>
+          <ng-template #notPlayedYet>Not played yet.</ng-template>
+      </div>
+  </div>
+</mat-accordion>
+  

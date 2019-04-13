@@ -5,14 +5,15 @@
   fxLayoutAlign="flex-start"
   multi="true" *ngIf="count > 0" #myDiv>
   <div
-    fxFlex="0 1 calc(25% - 5%)"
+    fxFlex="0 1 calc(33% - 5%)"
     fxFlex.lt-md="0 1 calc(50% - 5%)"
     fxFlex.lt-sm="100%"
     *ngFor="let category of categories"
   >
-    <mat-card class="children">
-      <button mat-button color="primary" [routerLink]="['/createQuiz', category.id]">{{ category.name }}</button>
-
+    <mat-card class="children" [routerLink]="['/createQuiz', category.id]">
+      {{ category.name }} 
+      <span class="spacer"></span>
+     <img src="{{ category.logo }}"  width="100px" height="100px" alt="">
     </mat-card>
   </div>
 </mat-accordion>

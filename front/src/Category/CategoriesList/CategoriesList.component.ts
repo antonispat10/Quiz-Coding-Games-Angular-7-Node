@@ -1,19 +1,21 @@
-import {Component, OnInit} from "@angular/core";
-import { SharedService } from "../shared/shared.service"
-import {Category} from "../models/Category";
+import {Component, OnInit, OnDestroy} from "@angular/core";
+import { SharedService } from "../../shared/shared.service"
+import {Category} from "../../models/Category";
 import {PageEvent} from "@angular/material";
 import { Subscription } from "rxjs";
+import { TouchSequence } from 'selenium-webdriver';
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./Home.component.html",
-  styleUrls: ["./Home.component.css"]
+  selector: "app-categories-list",
+  templateUrl: "./CategoriesList.component.html",
+  styleUrls: ["./CategoriesList.component.css"]
 })
-export class HomeComponent implements OnInit {
+export class CategoriesListComponent implements OnInit, OnDestroy {
   categories: Category[];
   currentPage = 1;
   categoriesPerPage = 12;
   count;
+  categoriesSub: Subscription;
 
   constructor(private sharedService: SharedService) {}
 
@@ -22,7 +24,7 @@ export class HomeComponent implements OnInit {
   }
 
   getCategories() {
-    this.sharedService.getCategories(this.currentPage, this.categoriesPerPage)
+    this.categoriesSub = this.sharedService.getCategories(this.currentPage, this.categoriesPerPage)
       .subscribe(values => {
         console.log(values)
         this.count = values.count;
@@ -36,5 +38,8 @@ export class HomeComponent implements OnInit {
     this.getCategories();
   }
 
+  ngOnDestroy() {
+    this.categoriesSub.unsubscribe();
+  }
 
 }

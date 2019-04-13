@@ -10,12 +10,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.5.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "fs": "0.0.1-security",
     "http-errors": "^1.7.2",
+    "jsonwebtoken": "^8.2.1",
     "mongoose": "^5.4.22",
+    "mongoose-data-seed": "^1.0.7",
+    "mongoose-seed": "^0.6.0",
+    "mongoose-unique-validator": "^2.0.1",
     "multer": "^1.4.1"
   }
 }
