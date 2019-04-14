@@ -1,0 +1,54 @@
+{
+  "data": [
+	{
+      "questions": "Which is the output of the console.log(\"2\" === 2)",
+      "choices": ["true", "false", "undefined"],
+      "answer": "false"
+    },
+    {
+      "questions": "Is JavaScript an interpreted language",
+      "choices": ["true", "false"],
+      "answer": "true"
+    },
+	{
+      "questions": "How to write an IF statement in JavaScript",
+      "choices": ["if (i = 2)", "if (i == 2)"],
+      "answer": "if (i == 2)"
+    },
+	{
+      "questions": "How do you add a comment in JavaScript",
+      "choices": ["// Comment ..", ".Comment"],
+      "answer": "// Comment .."
+    },
+	{
+      "questions": "How to write a JavaScript array",
+      "choices": ["var animals = [\"0:dog\",1:\"cat\"]", "var animals = \"dog\",\"cat\"", "var animals = [\"dog\",\"cat\"]"],
+      "answer": "var animals = [\"dog\",\"cat\"]"
+    },
+    {
+      "questions": "The external JavaScript file must be in .js extension.",
+      "choices": ["true", "false"],
+      "answer": "true"
+    },
+	{
+      "questions": "Which of the following is not a reserved word in JavaScript",
+      "choices": ["switch", "while", "delete", "update"],
+      "answer": "update"
+    },
+	{
+      "questions": "Which method returns the length of a string",
+      "choices": ["length", "size", "None of the above"],
+      "answer": "length"
+    },
+	{
+      "questions": "Which HTML attribute is used as a reference to an external JavaScript file",
+      "choices": ["rel", "src", "type", "href"],
+      "answer": "src"
+    },
+    {
+      "questions": "How do you find the nearest integer of 10.30",
+      "choices": ["Math.round(10.30)", "Math.ceil(10.30)"],
+      "answer": "Math.round(10.30)"
+    }
+  ]
+}
