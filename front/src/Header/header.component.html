@@ -1,13 +1,23 @@
 <mat-toolbar color="primary">
   <span class="desktop">
-    <a routerLink="/">Home</a>
+    <a routerLink="/" routerLinkActive="active-link">Quiz Coding Games</a>
   </span>
-  <ul>
+  <span class="spacer"></span>
+  <ul *ngIf="isAuth" >
     <li>
-      <button mat-button [routerLink]="['/createCategory']">Create Category</button>
+      <button mat-button [routerLink]="['/createCategory']" routerLinkActive="active-link">Create Quiz Category</button>
     </li>
     <li>
-        <button mat-button [routerLink]="['/searchResults']">Search Results</button>
-      </li>
+        <button mat-button [routerLink]="['/searchResults']" routerLinkActive="active-link">Search Results</button>
+    </li>
+  </ul>
+  <span class="spacer"></span>
+  <ul>
+    <li>
+      <button *ngIf="!isAuth" mat-button [routerLink]="['/login']" routerLinkActive="active-link">Login</button>
+    </li>
+    <li>
+        <button *ngIf="isAuth" mat-button (click)="onLogout()">Logout</button>
+    </li>
   </ul>
 </mat-toolbar>

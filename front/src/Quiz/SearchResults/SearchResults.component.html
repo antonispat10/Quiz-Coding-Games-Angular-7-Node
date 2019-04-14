@@ -7,6 +7,7 @@
       <button mat-raised-button color="accent" type="submit">Find Results</button>
     </form>
 </mat-card>
+<div *ngIf="ifResult"  class="header">Results for {{ results[0].name }} {{ results[0].surname }}</div>
 <mat-accordion 
 fxLayout="row wrap"
 fxLayout.lt-sm="column"
@@ -21,11 +22,12 @@ class="results"  *ngIf="ifResult"
   fxFlex.lt-sm="100%"
   class="grid-tile" *ngFor="let result of results; let i = index;"
   >
-      <div class="st">
-          <span>Test <b> {{ result.category.name }} </b></span>
-          <div *ngIf="result.result !== -1">Score: <b>{{ result.result }} </b></div>
-          <div *ngIf="result.result == -1">Not played yet this test</div>
-      </div>
+    <div class="st">
+        <span>Test <b> {{ result.category.name }} </b></span>
+        <div *ngIf="result.result !== -1">Score: <b>{{ result.result | number: '1.0-1' }}%</b></div>
+        <div *ngIf="result.result == -1">Not played yet this quiz</div>
+    </div>
   </div>
+
 </mat-accordion>
   

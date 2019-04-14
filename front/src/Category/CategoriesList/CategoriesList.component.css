@@ -16,3 +16,8 @@ a {
 mat-card {
   padding: 50px;
 }
+
+p {
+  font-size: 24px;
+  font-weight: 600;
+}

@@ -10,6 +10,7 @@ exports.createLink = async (req, res, next) => {
     catch (err) {
         console.log(err)
     }
+    console.log(req.body)
     if (!alreadyPlayed) {
         const randomLink = 'test/' +Math.floor(Math.random() * 1000000000);
          Quiz
@@ -52,7 +53,7 @@ exports.playQuiz = (req, res, next) => {
         .populate('category')
         .then(quiz => {
             console.log(quiz.category.name)
-            const quizName = quiz.name;
+            const quizName = quiz.category.name;
             Question.find({ categoryId: quiz.category._id })
                 .then(questions => {
                     res.status(200).json({ questions, quizName });
@@ -69,9 +70,9 @@ exports.playQuiz = (req, res, next) => {
         });
 };
 
-// link for setting result to 0
+// link for setting result to 0 in order to be played once
 exports.introQuiz = (req, res, next) => {
-    Quiz.updateOne({ link: req.query.link }, {result:1})
+    Quiz.updateOne({ link: req.query.link }, {result:0})
         .then(quiz => {
             console.log(quiz)
             if (quiz.nModified > 0) {
@@ -87,6 +88,28 @@ exports.introQuiz = (req, res, next) => {
         .catch(error => {
             res.status(500).json({
                 message: "Setting quiz results to 0 failed"
+            });
+        });
+};
+
+// link for submitting the result of the test
+exports.submitQuiz = (req, res, next) => {
+    console.log(req.body)
+    Quiz.updateOne({ link: req.body.link }, {result: req.body.score})
+        .then(quiz => {
+            if (quiz.nModified > 0) {
+                res.status(200).json({
+                    quiz,
+                    message: "Successfully set result"
+                });
+            } 
+            else {
+                res.status(500).json({ message: "Error, can't send the result" });
+              }
+        })
+        .catch(error => {
+            res.status(500).json({
+                message: "Setting result failed"
             });
         });
 };

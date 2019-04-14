@@ -18,3 +18,7 @@ ul {
 .spacer {
   flex: 1 0 auto;
 }
+
+mat-toolbar {
+  font-family: "PFDinTextCondPro", Georgia;
+}

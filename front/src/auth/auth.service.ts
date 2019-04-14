@@ -44,6 +44,7 @@ export class AuthService {
       .subscribe(
         response => {
           const token = response.token;
+          console.log(token)
           this.token = token;
           if (token) {
             const expiresInDuration = response.expiresIn;
@@ -89,7 +90,7 @@ export class AuthService {
     this.userId = null;
     clearTimeout(this.tokenTimer);
     this.clearAuthData();
-    this.router.navigate(["/"]);
+    this.router.navigate(["/login"]);
   }
 
   private setAuthTimer(duration: number) {

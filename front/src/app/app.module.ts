@@ -17,6 +17,7 @@ import {CreateQuizComponent} from "../Quiz/CreateQuiz/CreateQuiz.component";
 import { PlayQuizComponent } from 'src/Quiz/PlayQuiz/PlayQuiz.component';
 import { ErrorComponent } from 'src/Error/Error.component';
 import { SearchResultsComponent } from 'src/Quiz/SearchResults/SearchResults.component';
+import { AuthInterceptor } from 'src/auth/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { SearchResultsComponent } from 'src/Quiz/SearchResults/SearchResults.com
     FlexLayoutModule
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],

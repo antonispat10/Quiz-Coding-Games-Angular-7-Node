@@ -1,6 +1,6 @@
 import {Component, OnInit, OnDestroy} from "@angular/core";
 import { SharedService } from "../../shared/shared.service"
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Params } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
@@ -23,10 +23,11 @@ export class PlayQuizComponent implements OnInit, OnDestroy {
   index: number;
   intro: boolean = true;
   subIntroQuiz: Subscription;
+  subGetQuestions: Subscription;
   constructor(private sharedService: SharedService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-     this.route.queryParams.subscribe((params: ParamMap) => {
+     this.route.queryParams.subscribe((params: Params) => {
       this.url = params.link;
     });
     this.getQuestions();
@@ -51,7 +52,9 @@ export class PlayQuizComponent implements OnInit, OnDestroy {
       return;
     }
     this.load += 1;
-
+    if (this.index == 0) {
+      localStorage.setItem('score', '0')
+    }
     console.log(form.value)
     console.log(this.questions)
     if (this.questions[this.index].answer ==  form.value.answer) {
@@ -61,7 +64,11 @@ export class PlayQuizComponent implements OnInit, OnDestroy {
     }
     if (this.questions.length == (this.index + 1)) {
       this.score = +localStorage.getItem('score') / this.questions.length * 100;
-      console.log('ok')
+      this.sharedService.submitQuiz(this.url, this.score)
+      .subscribe(v => {
+        console.log(v)
+      })
+
       this.startedPlaying = false;
       this.intro = false;
       this.showResults = true;
@@ -71,7 +78,7 @@ export class PlayQuizComponent implements OnInit, OnDestroy {
   
   getQuestions() {
     console.log(this.url)
-    this.sharedService.getQuestions(this.url)
+    this.subGetQuestions = this.sharedService.getQuestions(this.url)
       .subscribe(values => {
         console.log(values)
         this.quizName = values.quizName;
@@ -81,7 +88,7 @@ export class PlayQuizComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subIntroQuiz.unsubscribe();
+    this.subGetQuestions.unsubscribe();
   }
 
 

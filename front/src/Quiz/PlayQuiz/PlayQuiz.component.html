@@ -1,7 +1,7 @@
 <mat-card *ngIf="checkLink">
   <mat-card-title *ngIf="intro">
-    <p>Welcome to the {{ quizName }} Quiz</p>
-    <p>The quiz is available only for 1 time, so don't close your browser</p>
+    <p>Welcome to the <span class="welcome">{{ quizName }} Quiz</span></p>
+    <p class="title">The quiz is available only for 1 time, so please don't close your browser</p>
   <form (submit)="onIntroQuiz(introQuizForm)" #introQuizForm="ngForm" >
     <button mat-raised-button color="accent" type="submit">Press Here to Start</button>
   </form>
@@ -9,7 +9,7 @@
   <div *ngIf="startedPlaying">
     <div *ngFor="let question of questions; let i = index" >
       <mat-card *ngIf="load == i" class="secondCard">
-          <p class="head" *ngIf="i == 0">{{ quizName }} Quiz</p>
+          <p class="head">{{ quizName }} Quiz</p>
           <form *ngIf="load == i" (submit)="onSubmitQuiz(submitQuizForm)" #submitQuizForm="ngForm" >
 
             <p class="question">{{ question.name }}</p>
@@ -23,8 +23,9 @@
   </div>
 
   <div *ngIf="showResults">
-    <mat-grid-list cols="1" color="primary" rowHeight="3:1">
-      <mat-grid-tile> Your Score is {{ score }}%</mat-grid-tile>
+    <mat-grid-list cols="1" color="primary" rowHeight="4:1">
+      <p class="score">{{ quizName }} Quiz</p>
+      <mat-grid-tile> Your Score is {{ score | number: '1.0-1' }}%</mat-grid-tile>
     </mat-grid-list>
   </div>
   

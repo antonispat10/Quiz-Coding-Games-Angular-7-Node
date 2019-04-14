@@ -4,7 +4,6 @@ import {Category} from "../models/Category";
 import {Observable, Subject} from "rxjs/index";
 import {environment} from "../environments/environment";
 import {map} from "rxjs/internal/operators";
-import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 import { Quiz } from 'src/models/Quiz';
 import { Router } from '@angular/router';
 
@@ -38,19 +37,19 @@ export class SharedService {
       return this.http
           .get<any>(BACKEND_URL + 'categories' +queryParams)
           .pipe(
-              map(values => {
-                  return {
-                      categories: values.categories.map(category => {
-                          return {
-                              id: category._id,
-                              name: category.name,
-                              logo: category.logo,
-                              filePath: category.filePath
-                          };
-                      }),
-                      count: values.count
-                  };
-              })
+            map(values => {
+              return {
+                  categories: values.categories.map(category => {
+                    return {
+                        id: category._id,
+                        name: category.name,
+                        logo: category.logo,
+                        filePath: category.filePath
+                    };
+                  }),
+                  count: values.count
+              };
+            })
           );
   }
 
@@ -60,8 +59,12 @@ export class SharedService {
 
   introQuiz(url: string) {
     const queryParams = `?link=${url}`;
-
     return this.http.post(`${BACKEND_URL}introQuiz${queryParams}`, queryParams);
+  }
+
+  submitQuiz(link: string, score: number) {
+    const data = { link, score };
+    return this.http.post(`${BACKEND_URL}submitQuiz`, data);
   }
 
   getQuestions(url: string) {
@@ -72,22 +75,21 @@ export class SharedService {
     .pipe(
         map(values => {
             return {
-                questions: values.questions.map(questions => {
-                    return {
-                        id: questions._id,
-                        name: questions.name,
-                        choices: questions.choices,
-                        answer: questions.answer
-                    };
-                }),
-                quizName: values.quizName
+              questions: values.questions.map(questions => {
+                return {
+                    id: questions._id,
+                    name: questions.name,
+                    choices: questions.choices,
+                    answer: questions.answer
+                };
+              }),
+              quizName: values.quizName
             };
         })
     );
   }
 
   findResults(email: string) {
-    console.log(email)
     return this.http.post<{ message: string; quiz: Quiz[] }>(`${BACKEND_URL}searchResults`, {email})
   }
 

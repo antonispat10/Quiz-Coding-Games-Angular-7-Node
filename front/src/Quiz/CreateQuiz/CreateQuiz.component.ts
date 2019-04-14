@@ -12,25 +12,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 
-export class CreateQuizComponent implements OnInit, OnDestroy {
+export class CreateQuizComponent implements OnInit {
   category;
   link;
-  FRONTEND_URL = 'localhost:4200/';
-  linkSub: Subscription;
+  categoryName
+  FRONTEND_URL = window.location.host;
 
   constructor(public sharedService: SharedService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      console.log(params.get('categoryId'))
       this.category = params.get('categoryId');
+      this.categoryName = params.get('categoryName');
     });
-
-    this.linkSub = this.sharedService.generatedLink
-      .subscribe(link => {
-        this.link = link;
-      })
-
   }
 
   onCreateQuiz(form: NgForm) {
@@ -39,12 +33,7 @@ export class CreateQuizComponent implements OnInit, OnDestroy {
     }
     this.sharedService.createQuiz(form.value, this.category)
       .subscribe((data: any) => {
-        this.sharedService.generatedLink.next(`${this.FRONTEND_URL}playQuiz?link=${data.randomLink}`);
+        this.link = `${this.FRONTEND_URL}/playQuiz?link=${data.randomLink}`;
       });
   }
-
-  ngOnDestroy() {
-    this.linkSub.unsubscribe();
-  }
-
 }

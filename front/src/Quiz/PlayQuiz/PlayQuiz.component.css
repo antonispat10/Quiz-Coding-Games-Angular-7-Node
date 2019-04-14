@@ -26,14 +26,36 @@ mat-radio-group {
 }
 
 .head {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   text-align: center;
+  color: #1d24e5;
+}
+
+.score {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  color: #ffdd00;
+}
+
+.welcome {
+  color: #ff0752;
+}
+
+.title {
+  font-size: 1rem;
 }
 
 mat-grid-list {
   background-color: #283593;
   color:white;
-  font-size: 80px;
+  font-size: 4rem;
+  width: 60%;
+  margin: 0 auto;
   font-weight: 600;
+}
+
+mat-grid-tile {
+  padding-bottom: 60px;
 }

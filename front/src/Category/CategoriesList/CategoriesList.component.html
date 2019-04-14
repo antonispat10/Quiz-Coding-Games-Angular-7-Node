@@ -10,13 +10,13 @@
     fxFlex.lt-sm="100%"
     *ngFor="let category of categories"
   >
-    <mat-card class="children" [routerLink]="['/createQuiz', category.id]">
-      {{ category.name }} 
+    <mat-card class="children" [routerLink]="['/createQuiz', category.name, category.id]">
+      <p>{{ category.name }} </p>
       <span class="spacer"></span>
-     <img src="{{ category.logo }}"  width="100px" height="100px" alt="">
+     <img src="{{ category.logo }}"  width="150px" height="100px" alt="">
     </mat-card>
   </div>
 </mat-accordion>
-<mat-paginator [length]="count" [pageSize]="12" [pageSizeOptions]="[12,18,30]" (page)="onChangedPage($event)"
-               *ngIf="count> 0"></mat-paginator>
-<p class="info-text mat-body-1" *ngIf="count <= 0 && !isLoading">No categories added yet!</p>
+<mat-paginator [length]="count" [pageSize]="categoriesPerPage" [pageSizeOptions]="[12,18,30]" (page)="onChangedPage($event)"
+               *ngIf="count > 0"></mat-paginator>
+<p class="info-text mat-body-1" *ngIf="count <= 0">No categories added yet!</p>

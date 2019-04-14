@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy} from "@angular/core";
+import {Component, OnDestroy, OnInit} from "@angular/core";
 import { SharedService } from "../../shared/shared.service"
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { NgForm } from '@angular/forms';
@@ -23,7 +23,7 @@ export class SearchResultsComponent implements OnDestroy {
   constructor(private sharedService: SharedService, private route: ActivatedRoute) {}
 
   onFindResults(form: NgForm) {
-    this.sharedService.findResults(form.value.email)
+    this.subFindResults = this.sharedService.findResults(form.value.email)
       .subscribe(response => {
         this.results = response.quiz
         console.log(this.results)

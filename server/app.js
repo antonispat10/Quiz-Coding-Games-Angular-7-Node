@@ -5,13 +5,14 @@ const mongoose = require("mongoose");
 
 const routes = require("./routes");
 const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
 app.use(cors());
 
 mongoose
   .connect(
-    "mongodb+srv://admin:admin@cluster0-jmntn.mongodb.net/quizaa?retryWrites=true", { useNewUrlParser: true }
+    "mongodb+srv://admin:admin@cluster0-jmntn.mongodb.net/q-angular?retryWrites=true", { useNewUrlParser: true }
   )
   .then(() => {
     console.log("Connected to database!");

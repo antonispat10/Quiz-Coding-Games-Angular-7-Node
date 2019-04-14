@@ -13,7 +13,7 @@ import { TouchSequence } from 'selenium-webdriver';
 export class CategoriesListComponent implements OnInit, OnDestroy {
   categories: Category[];
   currentPage = 1;
-  categoriesPerPage = 12;
+  categoriesPerPage = 9;
   count;
   categoriesSub: Subscription;
 
