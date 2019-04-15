@@ -3,8 +3,6 @@ const Question = require("../models/question");
 
 
 exports.createCategory = async (req, res, next) => {
-  const url = req.get("host");
-
   try {
     const category = await Category
     .create({
@@ -23,16 +21,15 @@ exports.createCategory = async (req, res, next) => {
         }
     });
 
-    json_array.map((value, i) => {
-        Question
+    for (value of json_array) {
+        await Question
         .create({
             name: value.name,
             choices: value.choices,
             answer: value.answer,
             categoryId: value.categoryId
         })
-        .then( v => { console.log(v.answer) })
-    })
+    }
        
   }
   catch (error) {

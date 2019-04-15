@@ -10,12 +10,11 @@ import { Injectable } from "@angular/core";
 import { MatDialog } from "@angular/material";
 
 import { ErrorComponent } from "./Error/Error.component";
-import { ErrorService } from "./Error/Error.service";
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
 
-  constructor(private dialog: MatDialog, private errorService: ErrorService) {}
+  constructor(private dialog: MatDialog) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     return next.handle(req).pipe(
