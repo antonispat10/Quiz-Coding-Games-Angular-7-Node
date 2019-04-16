@@ -4,6 +4,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Quiz } from 'src/models/Quiz';
 import { Subscription } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: "app-search-results",
@@ -24,15 +25,11 @@ export class SearchResultsComponent implements OnDestroy {
 
   onFindResults(form: NgForm) {
     this.subFindResults = this.sharedService.findResults(form.value.email)
-      .subscribe(response => {
-        this.results = response.quiz
-        console.log(this.results)
-        this.ifResult = true;
-      })
+    .pipe(take(1))
+    .subscribe(response => {
+      this.results = response.quiz
+      console.log(this.results)
+      this.ifResult = true;
+    })
   }
-
-  ngOnDestroy() {
-    this.subFindResults.unsubscribe();
-  }
-
 }

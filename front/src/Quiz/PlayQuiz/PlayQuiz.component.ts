@@ -3,6 +3,7 @@ import { SharedService } from "../../shared/shared.service"
 import { ActivatedRoute, ParamMap, Params } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: "app-play-quiz",
@@ -37,6 +38,7 @@ export class PlayQuizComponent implements OnInit, OnDestroy {
   
   onIntroQuiz() {
     this.subIntroQuiz = this.sharedService.introQuiz(this.url)
+    .pipe(take(1))
       .subscribe(v => {
         this.intro = false;
         this.startedPlaying = true;
@@ -62,7 +64,12 @@ export class PlayQuizComponent implements OnInit, OnDestroy {
     }
     if (this.questions.length == (this.index + 1)) {
       this.score = +localStorage.getItem('score') / this.questions.length * 100;
-      this.sharedService.submitQuiz(this.url, this.score);
+      this.sharedService.submitQuiz(this.url, this.score)
+      .pipe(take(1))
+      .subscribe(v => {
+        console.log(v)
+      })
+
       this.startedPlaying = false;
       this.intro = false;
       this.showResults = true;
@@ -73,17 +80,13 @@ export class PlayQuizComponent implements OnInit, OnDestroy {
   getQuestions() {
     console.log(this.url)
     this.subGetQuestions = this.sharedService.getQuestions(this.url)
-      .subscribe(values => {
+    .pipe(take(1))
+    .subscribe(values => {
         console.log(values)
         this.quizName = values.quizName;
         this.questions = values.questions;
         console.log(this.questions)
-      })
+    })
   }
-
-  ngOnDestroy() {
-    this.subGetQuestions.unsubscribe();
-  }
-
 
 }
