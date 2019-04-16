@@ -3,14 +3,8 @@ const Question = require("../models/question");
 
 // create a unique link for the quiz
 exports.createLink = async (req, res, next) => {
-    let alreadyPlayed;
-    try {
-         alreadyPlayed =  await checkIfAlreadyPlayed(req.body.email, req.body.category);
-    }
-    catch (err) {
-        console.log(err)
-    }
-    console.log(req.body)
+    const alreadyPlayed =  await checkIfAlreadyPlayed(req.body.email, req.body.category);
+
     if (!alreadyPlayed) {
         const randomLink = 'test/' +Math.floor(Math.random() * 1000000000);
          Quiz

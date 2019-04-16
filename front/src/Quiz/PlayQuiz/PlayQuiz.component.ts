@@ -55,8 +55,6 @@ export class PlayQuizComponent implements OnInit, OnDestroy {
     if (this.index == 0) {
       localStorage.setItem('score', '0')
     }
-    console.log(form.value)
-    console.log(this.questions)
     if (this.questions[this.index].answer ==  form.value.answer) {
       this.previousScore = +localStorage.getItem('score');
       this.newScore = this.previousScore + 1;
@@ -64,11 +62,7 @@ export class PlayQuizComponent implements OnInit, OnDestroy {
     }
     if (this.questions.length == (this.index + 1)) {
       this.score = +localStorage.getItem('score') / this.questions.length * 100;
-      this.sharedService.submitQuiz(this.url, this.score)
-      .subscribe(v => {
-        console.log(v)
-      })
-
+      this.sharedService.submitQuiz(this.url, this.score);
       this.startedPlaying = false;
       this.intro = false;
       this.showResults = true;
