@@ -11,7 +11,7 @@ import { take } from 'rxjs/operators';
   templateUrl: "./SearchResults.component.html",
   styleUrls: ["./SearchResults.component.css"]
 })
-export class SearchResultsComponent implements OnDestroy {
+export class SearchResultsComponent {
   url: string;
   quizName: string;
   questions: any = [];

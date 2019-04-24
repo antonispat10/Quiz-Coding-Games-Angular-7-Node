@@ -10,7 +10,7 @@ import { take } from 'rxjs/operators';
   templateUrl: "./playQuiz.component.html",
   styleUrls: ["./playQuiz.component.css"]
 })
-export class PlayQuizComponent implements OnInit, OnDestroy {
+export class PlayQuizComponent implements OnInit {
   url: string;
   quizName: string;
   questions: any = [];
