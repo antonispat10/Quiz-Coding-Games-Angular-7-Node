@@ -22,7 +22,7 @@ exports.createCategory = async (req, res, next) => {
     });
 
     for (value of json_array) {
-        await Question
+        Question
         .create({
             name: value.name,
             choices: value.choices,
@@ -30,6 +30,7 @@ exports.createCategory = async (req, res, next) => {
             categoryId: value.categoryId
         })
     }
+
        
   }
   catch (error) {
